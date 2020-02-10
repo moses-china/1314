@@ -1,1 +1,38 @@
-
+{
+      "name": "纵横小说网",
+      "url": "www.zongheng.com/",
+      "version": 100,
+      "search": {
+        "url": "http://search.zongheng.com/s?keyword=${key}",
+        "charset": "utf-8"
+        "list": "div.search-tab > div.search-result-list",
+        "name": "h2",
+        "author": ".bookinfo > a:nth-child(1)",
+        "cover": "img",
+        "summary": "p",
+        "detail": "h2 > a"
+    },
+    "detail": {
+        "name": ".book-name",
+        "author": ".au-name",
+        "cover": ".book-img > img",
+        "summary": ".book-dec",
+        "status": ".book-label > a:nth-child(1)",
+        "update": ".time@match->(?<=·)(.+)(?=·)",
+        "lastChapter": ".book-new-chapter > .tit > a",
+        "catalog": ".all-catalog"
+    },
+    "catalog": {
+        "list": ".volume-list > div",
+        "orderBy": 0,
+        "booklet": {
+            "name": ".volume@match->(?<=])(.+)(?=共[0-9]+章)",
+            "list": "li"
+        },
+        "name": "a",
+        "chapter": "a"
+    }
+    "chapter": {
+        "content": ".content > p"
+    }
+}
